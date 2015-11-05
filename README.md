@@ -1,2 +1,2 @@
 # taxi-station
-This project simulate the taxi station company.
+This project simulates the taxi station company.
