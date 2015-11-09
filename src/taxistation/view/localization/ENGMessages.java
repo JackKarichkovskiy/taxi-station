@@ -5,6 +5,9 @@
  */
 package taxistation.view.localization;
 
+import java.util.Arrays;
+import taxistation.controller.concrete.ConsoleController;
+
 /**
  * Interface that contains different localized messages or labels.
  *
@@ -16,7 +19,7 @@ public interface ENGMessages {
 
     String WELCOME_MESSAGE = "Welcome to the TaxiStation Application!";
 
-    String ENTER_COMMAND_MESSAGE = "Please enter one of the commands: q-quit, s-sort, f-find, c-cost of station";
+    String ENTER_COMMAND_MESSAGE = "Please enter one of the commands: " + Arrays.toString(ConsoleController.UserCommands.values());
 
     String IO_EXCEPTION = "Sorry, some IO problems. Please try again.";
 

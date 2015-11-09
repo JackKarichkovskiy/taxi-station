@@ -53,11 +53,11 @@ public abstract class AbstractCar implements Car, Goods {
      * Enumeration of engine types in the car.
      */
     public enum EngineType{
-        Petrol, Gas, Electricity
+        PETROL, GAS, ELECTRICITY
     }
     
     public AbstractCar() {
-        engineType = EngineType.Petrol;
+        engineType = EngineType.PETROL;
     }
 
     public AbstractCar(String model, int hp, int fuelConsumption, int price, int maxSpeed, EngineType engineType) {

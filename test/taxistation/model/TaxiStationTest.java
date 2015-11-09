@@ -42,9 +42,9 @@ public class TaxiStationTest {
 
     @Before
     public void setUp() {
-        station.addCar(new PassengerCar(5, "Audi", 200, 40, 30500, 240, AbstractCar.EngineType.Petrol));
-        station.addCar(new PassengerCar(6, "Honda", 180, 35, 30100, 200, AbstractCar.EngineType.Petrol));
-        station.addCar(new PassengerCar(4, "BMW", 220, 60, 40000, 260, AbstractCar.EngineType.Petrol));
+        station.addCar(new PassengerCar(5, "Audi", 200, 40, 30500, 240, AbstractCar.EngineType.PETROL));
+        station.addCar(new PassengerCar(6, "Honda", 180, 35, 30100, 200, AbstractCar.EngineType.PETROL));
+        station.addCar(new PassengerCar(4, "BMW", 220, 60, 40000, 260, AbstractCar.EngineType.PETROL));
     }
 
     @After
@@ -58,7 +58,7 @@ public class TaxiStationTest {
     @Test
     public void testCarCreation() {
         System.out.println("carCreation");
-        AbstractCar newCar = new PassengerCar(7, "Jeep", 250, 50, 50000, 100, AbstractCar.EngineType.Petrol);
+        AbstractCar newCar = new PassengerCar(7, "Jeep", 250, 50, 50000, 100, AbstractCar.EngineType.PETROL);
     }
 
     /**
@@ -67,7 +67,7 @@ public class TaxiStationTest {
     @Test(expected = IllegalArgumentException.class)
     public void testCarCreationWithNullParameter() {
         System.out.println("сarCreationWithNullParameter");
-        AbstractCar newCar = new PassengerCar(7, null, 250, 50, 50000, 100, AbstractCar.EngineType.Petrol);
+        AbstractCar newCar = new PassengerCar(7, null, 250, 50, 50000, 100, AbstractCar.EngineType.PETROL);
     }
 
     /**
@@ -76,7 +76,7 @@ public class TaxiStationTest {
     @Test
     public void testAddCar() {
         System.out.println("addCar");
-        AbstractCar newCar = new PassengerCar(7, "Jeep", 250, 50, 50000, 100, AbstractCar.EngineType.Petrol);
+        AbstractCar newCar = new PassengerCar(7, "Jeep", 250, 50, 50000, 100, AbstractCar.EngineType.PETROL);
         station.addCar(newCar);
         Assert.assertEquals(4, station.getCarCount());
     }
@@ -97,7 +97,7 @@ public class TaxiStationTest {
     @Test
     public void testRemoveCar() {
         System.out.println("removeCar");
-        AbstractCar car = new PassengerCar(6, "Honda", 180, 35, 30100, 200, AbstractCar.EngineType.Petrol);
+        AbstractCar car = new PassengerCar(6, "Honda", 180, 35, 30100, 200, AbstractCar.EngineType.PETROL);
         boolean expResult = true;
         boolean result = station.removeCar(car);
         assertEquals(2, station.getCarCount());
@@ -145,9 +145,9 @@ public class TaxiStationTest {
         System.out.println("sortCarsByFuelConsumption");
         station.sortCarsByFuelConsumption();
         List<AbstractCar> expResult = new ArrayList<>();
-        expResult.add(new PassengerCar(6, "Honda", 180, 35, 30100, 200, AbstractCar.EngineType.Petrol));
-        expResult.add(new PassengerCar(5, "Audi", 200, 40, 30500, 240, AbstractCar.EngineType.Petrol));
-        expResult.add(new PassengerCar(4, "BMW", 220, 60, 40000, 260, AbstractCar.EngineType.Petrol));
+        expResult.add(new PassengerCar(6, "Honda", 180, 35, 30100, 200, AbstractCar.EngineType.PETROL));
+        expResult.add(new PassengerCar(5, "Audi", 200, 40, 30500, 240, AbstractCar.EngineType.PETROL));
+        expResult.add(new PassengerCar(4, "BMW", 220, 60, 40000, 260, AbstractCar.EngineType.PETROL));
         assertArrayEquals(expResult.toArray(), station.getCars().toArray());
     }
 
@@ -159,7 +159,7 @@ public class TaxiStationTest {
         System.out.println("findCarWithSpeedInRangeOf");
         int speedMin = 220;
         int speedMax = 250;
-        AbstractCar expResult = new PassengerCar(5, "Audi", 200, 40, 30500, 240, AbstractCar.EngineType.Petrol);
+        AbstractCar expResult = new PassengerCar(5, "Audi", 200, 40, 30500, 240, AbstractCar.EngineType.PETROL);
         AbstractCar result = station.findCarWithSpeedInRangeOf(speedMin, speedMax);
         assertEquals(expResult, result);
     }
@@ -184,7 +184,7 @@ public class TaxiStationTest {
         System.out.println("findCarWithSpeed");
         int speedMin = 200;
         int speedMax = 200;
-        AbstractCar expResult = new PassengerCar(6, "Honda", 180, 35, 30100, 200, AbstractCar.EngineType.Petrol);
+        AbstractCar expResult = new PassengerCar(6, "Honda", 180, 35, 30100, 200, AbstractCar.EngineType.PETROL);
         AbstractCar result = station.findCarWithSpeedInRangeOf(speedMin, speedMax);
         assertEquals(expResult, result);
     }
